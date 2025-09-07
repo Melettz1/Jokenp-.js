@@ -1,0 +1,163 @@
+:root {
+    --bg-color: #1a1a2e;
+    --primary-color: #16213e;
+    --secondary-color: #0f3460;
+    --accent-color: #e94560;
+    --text-color: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.scoreboard h2 {
+    font-weight: 400;
+}
+
+.scoreboard p {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.result {
+    margin-bottom: 2rem;
+    min-height: 50px;
+}
+
+#result-message {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.choice {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.choice:hover {
+    transform: translateY(-10px);
+    background-color: var(--accent-color);
+    box-shadow: 0 15px 25px rgba(233, 69, 96, 0.4);
+}
+
+.choice img {
+    width: 60px;
+    height: 60px;
+    filter: invert(1);
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.winning-choice {
+    animation: glow-win 1s ease forwards;
+}
+
+.losing-choice {
+    animation: glow-lose 1s ease forwards;
+}
+
+.draw-choice {
+    animation: glow-draw 1s ease forwards;
+}
+
+@keyframes glow-win {
+    0% { box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50; }
+    50% { box-shadow: 0 0 20px #4CAF50, 0 0 40px #4CAF50; }
+    100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #4CAF50; }
+}
+
+@keyframes glow-lose {
+    0% { box-shadow: 0 0 10px #f44336, 0 0 20px #f44336; }
+    50% { box-shadow: 0 0 20px #f44336, 0 0 40px #f44336; }
+    100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #f44336; }
+}
+
+@keyframes glow-draw {
+    0% { box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b; }
+    50% { box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffeb3b; }
+    100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #ffeb3b; }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .scoreboard {
+        font-size: 1rem;
+    }
+
+    .scoreboard p {
+        font-size: 2rem;
+    }
+
+    #result-message {
+        font-size: 1.2rem;
+    }
+
+    .choice {
+        padding: 1rem;
+    }
+
+    .choice img {
+        width: 40px;
+        height: 40px;
+    }
+}
