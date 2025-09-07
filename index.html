@@ -3,49 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jokenpô.js</title>
+    <title>Jokenpô Ultimate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Jokenpô</h1>
-        </header>
+    <div id="particles-js"></div>
+
+    <main class="container">
+        <h1 class="title" id="main-title"></h1>
 
         <div class="scoreboard">
-            <div class="player-score">
-                <h2>Você</h2>
-                <p id="player-score">0</p>
+            <div class="player">
+                <span>Você</span>
+                <span id="player-score">0</span>
             </div>
-            <div class="computer-score">
-                <h2>Computador</h2>
-                <p id="computer-score">0</p>
+            <div class="computer">
+                <span>Computador</span>
+                <span id="computer-score">0</span>
             </div>
         </div>
 
-        <div class="result">
-            <p id="result-message">Faça sua jogada!</p>
+        <div class="match">
+            <div class="choice-display player-choice-display">
+                <span id="player-choice-icon"></span>
+            </div>
+            <div class="versus" id="versus-text">VS</div>
+            <div class="choice-display computer-choice-display">
+                <span id="computer-choice-icon"></span>
+            </div>
         </div>
+        
+        <p class="result-message" id="result-message">Escolha uma opção para começar!</p>
 
         <div class="choices">
-            <div class="choice" id="rock">
+            <button class="choice" id="rock" title="Pedra">
                 <img src="https://img.icons8.com/ios-filled/100/000000/hand-rock.png" alt="Pedra"/>
-            </div>
-            <div class="choice" id="paper">
+            </button>
+            <button class="choice" id="paper" title="Papel">
                 <img src="https://img.icons8.com/ios-filled/100/000000/hand.png" alt="Papel"/>
-            </div>
-            <div class="choice" id="scissors">
+            </button>
+            <button class="choice" id="scissors" title="Tesoura">
                 <img src="https://img.icons8.com/ios-filled/100/000000/hand-scissors.png" alt="Tesoura"/>
-            </div>
+            </button>
         </div>
 
-        <footer>
-            <p>Criado por @Melettz1</p>
+        <button class="reset-button" id="reset-button">Reiniciar Placar</button>
+        
+        <footer class="footer">
+            Criado por @Melettz1
         </footer>
-    </div>
 
+        <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+        <audio id="win-sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3" preload="auto"></audio>
+        <audio id="lose-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3" preload="auto"></audio>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
